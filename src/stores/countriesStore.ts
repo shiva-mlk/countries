@@ -13,7 +13,8 @@ export const useCountriesStore = defineStore('countries', () => {
     
     loading.value = true;
     try {
-      const response = await axios.get('https://restcountries.com/v2/all');
+      const fields = 'name,capital,currencies,languages,population,region,subregion,flags,alpha3Code, ';
+      const response = await axios.get(`https://restcountries.com/v2/all?fields=${fields}`);
       countries.value = response.data;
     } catch (err) {
       error.value = 'Failed to load countries';
