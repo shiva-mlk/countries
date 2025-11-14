@@ -15,12 +15,13 @@ const goToDetails = () => {
     @click="goToDetails"
     class="bg-white dark:bg-dm-element rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition hover:scale-105"
   >
-    <div class="h-40 w-full relative">
+    <div class="aspect-[4/3] w-full relative bg-gray-200 dark:bg-gray-700">
       <img 
         :src="country.flags.png" 
         :alt="`Flag of ${country.name}`" 
         class="w-full h-full object-cover"
-        loading="lazy"
+        loading="lazy" 
+        decoding="async"
       />
     </div>
     
